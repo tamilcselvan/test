@@ -1,0 +1,46 @@
+name: Documentation
+description: "Request an add/update documentation"
+title: "[Docs]: "
+labels: ["documentation"]
+body:
+  - type: markdown
+    attributes:
+      value: '# Doc update'
+  - type: dropdown
+    id: request-type-dd
+    attributes:
+      label: Request Type
+      options:
+        - Request for New Documentation
+        - Request to Update Existing Documentation
+      multiple: false
+    validations:
+      required: true
+  - type: textarea
+    id: doc_description
+    attributes:
+      label: Describe the specific documentation request or what needs to be updated. 
+      description: Be clear and detailed to help the contributors understand the purpose and scope of this request.
+    validations:
+      required: true
+  - type: textarea
+    id: expected_information
+    attributes:
+      label: Explain why this documentation is needed or why the existing documentation requires an update. What problem does it solve?
+    validations:
+      required: true
+  - type: textarea
+    id: extra_info
+    attributes:
+      label: Additional information
+      description: Is there anything else we should know about this request?
+    validations:
+      required: false
+  - type: checkboxes
+    id: checklists
+    attributes:
+      label: Checklist
+      description: Before submitting this issue, please make sure you have
+      options:
+        - label: Reviewed open issues and pull requests to confirm that a similar request/update is not already in progress.
+          required: true
